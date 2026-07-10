@@ -1,0 +1,10 @@
+from django.urls import path
+from .views import *
+
+urlpatterns = [
+    path("menu/", MenuList.as_view()),
+    path("order/", PlaceOrder.as_view()),
+    path("reserve/", TableReservation.as_view()),
+    path("inventory/", InventoryList.as_view()),
+    path("inventory/<int:pk>/", UpdateInventory.as_view()),
+]
