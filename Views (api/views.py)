@@ -1,0 +1,23 @@
+from rest_framework import generics
+from .models import *
+from .serializers import *
+
+class MenuList(generics.ListAPIView):
+    queryset = MenuItem.objects.all()
+    serializer_class = MenuSerializer
+
+class PlaceOrder(generics.CreateAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+
+class TableReservation(generics.CreateAPIView):
+    queryset = Reservation.objects.all()
+    serializer_class = ReservationSerializer
+
+class InventoryList(generics.ListAPIView):
+    queryset = Inventory.objects.all()
+    serializer_class = InventorySerializer
+
+class UpdateInventory(generics.UpdateAPIView):
+    queryset = Inventory.objects.all()
+    serializer_class = InventorySerializer
